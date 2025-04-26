@@ -6,10 +6,19 @@ const cors = require("cors");
 const app = express();
 const server = http.createServer(app);
 
+// app.use(cors({
+//   origin:"*",
+//   method:"*",
+//   credentials:true,
+
+
+// }))
+
 const io = new Server(server, {
   cors: {
     origin: "*", // Update to match frontend deployment URL
-    methods: ["GET", "POST"],
+    methods: "*",
+    credentials:true,
   },
 });
 
